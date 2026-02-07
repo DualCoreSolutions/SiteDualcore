@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <h1>Bem-vindo à DualCore Solutions</h1>
-        <p>Infraestrutura, Python e Automação de alto nível.</p>
-    </body>
+<head>
+    <title>DualCore Solutions - Login</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial; text-align: center; background-color: #f4f4f4; }
+        .login-container { background: white; width: 300px; margin: 50px auto; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px #ccc; }
+        img { max-width: 150px; margin-bottom: 20px; }
+        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="images/logo.png" alt="Logo DualCore">
+        <h2>Acesso ao Sistema </h2>
+        <form action="LoginServlet" method="POST">
+            <input type="text" name="login" placeholder="Usuário">
+            <input type="password" name="senha" placeholder="Senha">
+            <button type="submit">Entrar</button>
+            <h3>Novo por aqui? <a href="cadastro.html">Cadastre-se</a></h3>
+        </form>
+    </div>
+</body>
 </html>
