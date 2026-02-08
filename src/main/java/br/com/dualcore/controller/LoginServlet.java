@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
                 
                 // MUDANÇA CHAVE: Redireciona para o Servlet de Produtos
                 // Assim a lista de ativos carrega automaticamente no Dashboard
-                response.sendRedirect("ProdutoServlet"); 
+                response.sendRedirect("DashboardServlet"); 
                 
             } else {
                 System.out.println("Senha incorreta para o usuário: " + loginDigitado);

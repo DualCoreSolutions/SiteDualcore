@@ -1,5 +1,6 @@
 package br.com.dualcore.service;
 
+import br.com.dualcore.model.Produto;
 import br.com.dualcore.model.Usuario;
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
@@ -14,4 +15,5 @@ public class UsuarioService {
     public void cadastrar(Usuario usuario) {
         em.persist(usuario);
     }
+    
 }

@@ -36,7 +36,7 @@ public class CadastroServlet extends HttpServlet {
             usuarioService.cadastrar(novo);
             
             System.out.println("DualCore - Sucesso via EJB: " + login);
-            response.sendRedirect("index.html?sucesso=1");
+            response.sendRedirect("DashboardServlet");
             
         } catch (Exception e) {
             e.printStackTrace();

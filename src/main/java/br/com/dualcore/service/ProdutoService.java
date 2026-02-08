@@ -19,4 +19,10 @@ public class ProdutoService {
     public List<Produto> listarTodos() {
         return em.createQuery("SELECT p FROM Produto p", Produto.class).getResultList();
     }
+    public void excluir(Long id) {
+        Produto p = em.find(Produto.class, id);
+        if (p != null) {
+            em.remove(p);
+        }
+    }
 }
