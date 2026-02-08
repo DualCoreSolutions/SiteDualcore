@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
 import java.io.IOException;
-import java.util.List; // Import necessário para a proteção contra duplicados
+import java.util.List;
 import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet("/LoginServlet")
@@ -31,22 +31,19 @@ public class LoginServlet extends HttpServlet {
         System.out.println("Tentativa de login para: " + loginDigitado);
 
         try {
-            // BUSCA BLINDADA: Usamos getResultList para evitar o erro de 'More than one result'
             List<Usuario> resultados = em.createQuery("SELECT u FROM Usuario u WHERE u.login = :login", Usuario.class)
                                          .setParameter("login", loginDigitado)
                                          .getResultList();
 
+            // CORREÇÃO: Se não encontrar, volta para o login com erro 2
             if (resultados.isEmpty()) {
                 System.out.println("Usuário não encontrado: " + loginDigitado);
-                // Mude de .html para .jsp
-                response.sendRedirect("dashboard.jsp");
-                return; // Encerra o método aqui
+                response.sendRedirect("index.html?erro=2");
+                return; 
             }
 
-            // Pega o primeiro usuário da lista (o mais antigo ou único)
             Usuario user = resultados.get(0);
 
-            // VERIFICAÇÃO DE SEGURANÇA (BCrypt + Texto Puro)
             boolean senhaValida = false;
             if (user.getSenha() != null && user.getSenha().startsWith("$2a$")) {
                 senhaValida = BCrypt.checkpw(senhaDigitada, user.getSenha());
@@ -58,7 +55,11 @@ public class LoginServlet extends HttpServlet {
                 System.out.println("Login com sucesso para: " + loginDigitado);
                 HttpSession session = request.getSession();
                 session.setAttribute("usuarioLogado", user);
-                response.sendRedirect("dashboard.jsp"); 
+                
+                // MUDANÇA CHAVE: Redireciona para o Servlet de Produtos
+                // Assim a lista de ativos carrega automaticamente no Dashboard
+                response.sendRedirect("ProdutoServlet"); 
+                
             } else {
                 System.out.println("Senha incorreta para o usuário: " + loginDigitado);
                 response.sendRedirect("index.html?erro=1");

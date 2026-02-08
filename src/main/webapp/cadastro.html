@@ -3,21 +3,11 @@
 <head>
     <title>DualCore Solutions - Login</title>
     <meta charset="UTF-8">
-    <style>
-        body { font-family: Arial; text-align: center; background-color: #f4f4f4; }
-        .login-container { background: white; width: 300px; margin: 50px auto; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px #ccc; }
-        img { max-width: 150px; margin-bottom: 20px; }
-        input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
-        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
-    </style>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
-<body>
-    <header style="margin-bottom: 40px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 10px;">Aqui Começa Sua Jornada Com a DualCoreSolutions</h1>
-        <p>Gerencie seus serviços abaixo.</p>
-    </header>
+<body class="cadastro-body">
     <div class="login-container">
-        <img src="images/topo.png" alt="Logo DualCore">
+        <img src="images/cadastro.png" alt="Logo DualCore">
         <hr> <form action="CadastroServlet" method="POST">
             <h2>Novo por aqui? Cadastre-se</h2>
             <input type="text" name="novoLogin" placeholder="Escolha um usuário" required>
