@@ -73,7 +73,7 @@
                 <td>R$ <%= String.format("%.2f", p.getPreco())%></td>
                 <td><%= p.getDescricao()%></td>
                 <td>
-                    <a href="EditarProdutoServlet?id=<%= p.getId()%>" style="text-decoration: none;">✏️</a> | 
+                    <a href="PrepararEdicaoServlet?id=<%= p.getId() %>" style="text-decoration: none;">✏️</a>  
                     <a href="ExcluirProdutoServlet?id=<%= p.getId()%>" 
                        style="text-decoration: none;" 
                        onclick="return confirm('Deseja excluir o ativo: <%= p.getNome()%>?')">🗑️</a>

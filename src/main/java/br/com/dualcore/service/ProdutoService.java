@@ -25,4 +25,11 @@ public class ProdutoService {
             em.remove(p);
         }
     }
+    public void atualizar(Produto p) {
+        em.merge(p); // O merge atualiza o registro existente no PostgreSQL
+    }
+
+    public Produto buscarPorId(Long id) {
+        return em.find(Produto.class, id);
+    }
 }
