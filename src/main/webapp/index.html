@@ -1,20 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Dashboard - DualCore Solutions</title>
+    <title>DualCore Solutions - Inovação em TI</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos.css?v=2">
 </head>
-<body class="login-body">
-    <div class="login-container">
-        <img src="images/login.png" alt="Logo DualCore">
-        <h2>Acesso ao Sistema </h2>
-        <form action="LoginServlet" method="POST">
-            <input type="text" name="login" placeholder="Usuário">
-            <input type="password" name="senha" placeholder="Senha">
-            <button type="submit">Entrar</button>
-            <h3>Novo por aqui? <a href="cadastro.html">Cadastre-se</a></h3>
-        </form>
+<body class="login-body"> 
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="nav-logo-box">
+                <img src="images/icon.png" class="nav-icon">
+                <span class="nav-text">DualCore<span>Solutions</span></span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="login.jsp" class="btn-nav-login">Acesso</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="height: 70px;"></div>
+
+    <div class="hero-banner">
+        <div class="hero-bg">
+            <img src="images/cadastro.png" alt="Background">
+        </div>
+
+        <div class="hero-content">
+            <h1>DualCore <span>Solutions</span></h1>
+            <div class="status-badge">
+                STATUS: ONLINE
+            </div>
+        </div>
     </div>
+
+    <section id="servicos" class="services-section">
+        <div class="card-container">
+            <div class="service-card">
+                <i class="icon">🐍</i>
+                <h3>Automação Python</h3>
+                <p>Scripts inteligentes para otimização de processos e gestão de dados.</p>
+            </div>
+            <div class="service-card">
+                <i class="icon">☕</i>
+                <h3>Sistemas Java</h3>
+                <p>Desenvolvimento robusto com Jakarta EE para aplicações corporativas.</p>
+            </div>
+            <div class="service-card">
+                <i class="icon">🖥️</i>
+                <h3>Infraestrutura</h3>
+                <p>Configuração de servidores e gestão de ativos de rede.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-welcome">
+        <h1>Bem-vindo à DualCore Solutions</h1>
+        <p>Inovação em Infraestrutura e Automação.</p>
+    </main>
+
 </body>
 </html>

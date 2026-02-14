@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Editar</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="estilos.css">
+        <link rel="stylesheet" type="text/css" href="estilos.css?v=2">
     </head>
     <body class="dash-body">
         <div class="card">

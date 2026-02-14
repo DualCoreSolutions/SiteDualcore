@@ -15,10 +15,10 @@
     <head>
         <title>Dashboard - DualCore Solutions</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="estilos.css">
+        <link rel="stylesheet" type="text/css" href="estilos.css?v=2">
     </head>
     <body class="dash-body">
-        <div class="card-card">
+        <div class="card">
             <div class="header">
                 <h1>Painel de Controle</h1>
                 <a href="LogoutServlet" class="btn-sair">Sair</a>
@@ -27,8 +27,6 @@
             <h2>Olá, <%= user.getLogin()%>! 👋</h2>
             <p>Você está acessando a infraestrutura da <strong>DualCore Solutions</strong>.</p>
         </div>
-
-        <hr>
 
         <div class="card">
             <h3>📦 Cadastrar Novo Ativo no Inventário</h3>
@@ -73,7 +71,7 @@
                 <td>R$ <%= String.format("%.2f", p.getPreco())%></td>
                 <td><%= p.getDescricao()%></td>
                 <td>
-                    <a href="PrepararEdicaoServlet?id=<%= p.getId() %>" style="text-decoration: none;">✏️</a>  
+                    <a href="PrepararEdicaoServlet?id=<%= p.getId()%>" style="text-decoration: none;">✏️</a>  
                     <a href="ExcluirProdutoServlet?id=<%= p.getId()%>" 
                        style="text-decoration: none;" 
                        onclick="return confirm('Deseja excluir o ativo: <%= p.getNome()%>?')">🗑️</a>
